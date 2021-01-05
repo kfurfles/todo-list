@@ -5,13 +5,14 @@ dotenv.config()
 
 const ENV = process.env.NODE_ENV || 'development'
 
-const envConfig = require(join(__dirname,'enviroments', ENV))
+const file = (extension: string) => join(__dirname,'enviroments', `${ENV}.${extension}`)
+const envConfig = require(file('ts')) || require(file('js'))
 
 const config: TypeProjectsConfig | any = Object.assign({
     [ENV]: true,
     env: ENV,
     db: loadDbConfig()
-}, envConfig)
+}, { web: envConfig })
 
 export default config
 

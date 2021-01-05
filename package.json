@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "cross-env NODE_PATH=. NODE_ENV=development nodemom",
+    "start:dev": "cross-env NODE_PATH=. NODE_ENV=development nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,7 +13,9 @@
   "dependencies": {
     "awilix": "^4.3.1",
     "awilix-express": "^3.0.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "log4js": "^6.3.0",
     "nodemon": "^2.0.6",
     "remove": "^0.1.5",

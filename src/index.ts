@@ -1,5 +1,11 @@
-import config from '../config'
+import Application from './app/Application';
+import container from './container'
 
-console.log(config);
-console.log('hello word1')
+const app: Application = container.resolve('app')
+
+app.start()
+    .catch((error) => {
+        console.error(error.stack);
+        process.exit();
+      })
 

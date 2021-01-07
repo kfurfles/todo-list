@@ -12,7 +12,7 @@ const config: TypeProjectsConfig | any = Object.assign({
     [ENV]: true,
     env: ENV,
     db: loadDbConfig()
-}, { web: envConfig })
+}, { ...envConfig.default })
 
 export default config
 

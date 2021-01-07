@@ -1,4 +1,4 @@
-import Log4js, { Configuration } from 'log4js'
+import Log4js from 'log4js'
 import { TypeProjectsConfig } from '../../../config/types/config.type';
 
 type TypeLogger = { 
@@ -6,8 +6,7 @@ type TypeLogger = {
 }
 
 export default ({ config }: TypeLogger) => {
-  console.log('hello logger')
-  // Log4js.configure(config.logging as Configuration);
+  Log4js.configure(config.logging);
 
-  // return Log4js.getLogger();
+  return Log4js.getLogger();
 };

@@ -5,11 +5,14 @@ const logPath = join(__dirname,'../../logs/production.log')
 
 export default {
     web: {
-        port: 300
+        port: 3000
     },
     logging: {
-        appenders: [
-            { type: 'file', filename: logPath }
-        ]
+        appenders: {
+            file: { type: 'file', filename: logPath }
+        },
+        categories: {
+            default: { appenders: [ 'file' ], level: 'debug' }
+        }
     }
 } as TypeEnviroment

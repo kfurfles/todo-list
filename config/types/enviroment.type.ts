@@ -4,7 +4,5 @@ export type TypeEnviroment = {
     web: {
         port: number
     },
-    logging: {
-        appenders: Appender[]
-    } | Configuration
+    logging: Pick<Configuration, 'appenders' | 'categories'>
 }
